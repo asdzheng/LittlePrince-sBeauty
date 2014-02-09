@@ -61,7 +61,7 @@ public class NotesListItem extends LinearLayout {
 			mCallName.setVisibility(View.GONE);
 			mAlert.setVisibility(View.VISIBLE);
 			mTitle.setTextAppearance(context, R.style.TextAppearancePrimaryItem);
-			
+
 			mAlert.setImageResource(R.drawable.call_record);
 		} else if (data.getParentId() == Notes.ID_CALL_RECORD_FOLDER) {
 			mCallName.setVisibility(View.VISIBLE);

@@ -14,7 +14,6 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 public class SplashActivity extends Activity {
 
 	TextView textView1, textView2, textView3, textView4, textView5, textView6,
@@ -24,8 +23,7 @@ public class SplashActivity extends Activity {
 	ImageView head, logo;
 
 	final static long DURATION_TIME = 3000;
-	final static long CLOSE_DURATION_TIME = 1;	
-
+	final static long CLOSE_DURATION_TIME = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +33,10 @@ public class SplashActivity extends Activity {
 		initTab();
 		showTextView();
 		showHeadImage();
-		
-		
+
 		viewChange(logo);
-		//closeView();
-		
+		// closeView();
+
 		new Handler().postDelayed(new disAppearView(), 49950);
 		new Handler().postDelayed(new loadMainTabTask(), 500);
 
@@ -107,8 +104,8 @@ public class SplashActivity extends Activity {
 		alphaAnimation.setStartOffset(offset);
 		textView.setAnimation(alphaAnimation);
 	}
-	
-	class disAppearView implements Runnable{
+
+	class disAppearView implements Runnable {
 
 		@Override
 		public void run() {
@@ -127,9 +124,8 @@ public class SplashActivity extends Activity {
 			textView12.setVisibility(View.INVISIBLE);
 			textView13.setVisibility(View.INVISIBLE);
 			textView14.setVisibility(View.INVISIBLE);
-			
 		}
-		
+
 	}
 
 	class loadMainTabTask implements Runnable {
@@ -137,7 +133,6 @@ public class SplashActivity extends Activity {
 		@Override
 		public void run() {
 			Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-
 			startActivity(intent);
 			finish();
 		}

@@ -16,9 +16,9 @@ import android.os.Message;
 import android.widget.Toast;
 
 public class PlayMusicService extends Service implements OnCompletionListener {
-	
-    private List<Integer> mTimeList = new ArrayList<Integer>();
-	
+
+	private List<Integer> mTimeList = new ArrayList<Integer>();
+
 	private static final int PLAYING = 1;// 定义该怎么对音乐操作的常量,如播放是1
 	private static final int PAUSE = 2;// 暂停事件是2
 	private static final int STOP = 3;// 停止事件是3
@@ -28,7 +28,7 @@ public class PlayMusicService extends Service implements OnCompletionListener {
 	private MediaPlayer mp;// MediaPlayer对象
 	private Handler handler;// handler对象
 	private int currentTime;// 当前时间
-	private String music_name ;
+	private String music_name;
 	private InputStream is;
 
 	@Override
@@ -78,7 +78,7 @@ public class PlayMusicService extends Service implements OnCompletionListener {
 			case STOP:
 				stop();
 				break;
-				
+
 			}
 		}
 
@@ -88,39 +88,39 @@ public class PlayMusicService extends Service implements OnCompletionListener {
 	private void play() {
 		if (mp != null) {
 			mp.start();
-			
+
 			LrcHandle lrcHandle = new LrcHandle();
-		    lrcHandle.readLRC(is);
+			lrcHandle.readLRC(is);
 			mTimeList = lrcHandle.getTime();
 			new Thread(new Runnable() {
-	            int i = 0;
+				int i = 0;
 
-	            @Override
-	            public void run() {
-	                while (mp.isPlaying()) {
-	                    handler.post(new Runnable() {
+				@Override
+				public void run() {
+					while (mp.isPlaying()) {
+						handler.post(new Runnable() {
 
-	                        @Override
-	                        public void run() {
-	                        	final Intent intent = new Intent();
-	                    		intent.setAction(MUSIC_STAR);
-	                    		sendBroadcast(intent);
-	                        }
-	                    });
-	                    try {
-	                        Thread.sleep(mTimeList.get(i + 1) - mTimeList.get(i));
-	                    } catch (InterruptedException e) {
-	                    }
-	                    i++;
-	                    if (i == mTimeList.size() - 1) {
-	                        mp.stop();
-	                        break;
-	                    }
-	                }
-	            }
-	        }).start();
+							@Override
+							public void run() {
+								final Intent intent = new Intent();
+								intent.setAction(MUSIC_STAR);
+								sendBroadcast(intent);
+							}
+						});
+						try {
+							Thread.sleep(mTimeList.get(i + 1)
+									- mTimeList.get(i));
+						} catch (InterruptedException e) {
+						}
+						i++;
+						if (i == mTimeList.size() - 1) {
+							mp.stop();
+							break;
+						}
+					}
+				}
+			}).start();
 
-			
 		}
 		System.out.println("开始播放音乐");
 	}
@@ -138,12 +138,12 @@ public class PlayMusicService extends Service implements OnCompletionListener {
 		if (mp != null) {
 			mp.stop();
 		}
-		
+
 		if (handler != null) {
 			handler.removeMessages(1);
 			handler = null;
 		}
-		
+
 	}
 
 	/**

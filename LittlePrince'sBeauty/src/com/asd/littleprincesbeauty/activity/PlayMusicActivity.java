@@ -38,7 +38,6 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 	private static final String MUSIC_STAR = "com.music.star";
 	private static final int PLAY = 1;// 定义播放状态
 	private static final int PAUSE = 2;// 暂停状态
-	private static final int STOP = 3;// 停止
 
 	private static final int STATE_PLAY = 1;// 播放状态设为1,表示播放状态
 	private static final int STATE_PAUSE = 2;// 播放状态设为2，表示暂停状态
@@ -147,7 +146,7 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 				thread.start();
 			} else if (isWait) {
 				System.out.println("叫醒");
-				new Thread(){
+				new Thread() {
 					@Override
 					public void run() {
 						synchronized (thread) {

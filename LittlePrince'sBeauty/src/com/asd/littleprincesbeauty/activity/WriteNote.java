@@ -218,7 +218,7 @@ public class WriteNote extends Activity implements OnClickListener,
 				initMenuDialog();
 				menuDialog.show();
 
-			} 
+			}
 		}
 		return false;
 	}
@@ -287,7 +287,7 @@ public class WriteNote extends Activity implements OnClickListener,
 		builder.show();
 
 	}
-	
+
 	@Override
 	public void onBackPressed() {
 		Intent intent = new Intent(this, MainActivity.class);

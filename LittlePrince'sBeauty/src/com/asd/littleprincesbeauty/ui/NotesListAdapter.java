@@ -23,7 +23,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -31,158 +30,156 @@ import java.util.Iterator;
 
 import com.asd.littleprincesbeauty.data.tool.Notes;
 
-
 public class NotesListAdapter extends CursorAdapter {
-    private static final String TAG = "NotesListAdapter";
-    private Context mContext;
-    private HashMap<Integer, Boolean> mSelectedIndex;
-    private int mNotesCount;
-    private boolean mChoiceMode;
+	private static final String TAG = "NotesListAdapter";
+	private Context mContext;
+	private HashMap<Integer, Boolean> mSelectedIndex;
+	private int mNotesCount;
+	private boolean mChoiceMode;
 
-    public static class AppWidgetAttribute {
-        public int widgetId;
-        public int widgetType;
-    };
+	public static class AppWidgetAttribute {
+		public int widgetId;
+		public int widgetType;
+	};
 
-    public NotesListAdapter(Context context) {
-        super(context, null);
-        mSelectedIndex = new HashMap<Integer, Boolean>();
-        mContext = context;
-        mNotesCount = 0;
-    }
+	public NotesListAdapter(Context context) {
+		super(context, null);
+		mSelectedIndex = new HashMap<Integer, Boolean>();
+		mContext = context;
+		mNotesCount = 0;
+	}
 
-    @Override
-    public View newView(Context context, Cursor cursor, ViewGroup parent) {
-System.out.println("new View!!! == " + cursor );
-        return new NotesListItem(context);
-    }
+	@Override
+	public View newView(Context context, Cursor cursor, ViewGroup parent) {
+		return new NotesListItem(context);
+	}
 
-    @Override
-    public void bindView(View view, Context context, Cursor cursor) {
-    	System.out.println("bindView ==== " + cursor);
-        if (view instanceof NotesListItem) {
-        	
-            NoteItemData itemData = new NoteItemData(context, cursor);
-            ((NotesListItem) view).bind(context, itemData, mChoiceMode,
-                    isSelectedItem(cursor.getPosition()));
-        }
-    }
+	@Override
+	public void bindView(View view, Context context, Cursor cursor) {
+		System.out.println("bindView ==== " + cursor);
+		if (view instanceof NotesListItem) {
 
-    public void setCheckedItem(final int position, final boolean checked) {
-        mSelectedIndex.put(position, checked);
-        notifyDataSetChanged();
-    }
+			NoteItemData itemData = new NoteItemData(context, cursor);
+			((NotesListItem) view).bind(context, itemData, mChoiceMode,
+					isSelectedItem(cursor.getPosition()));
+		}
+	}
 
-    public boolean isInChoiceMode() {
-        return mChoiceMode;
-    }
+	public void setCheckedItem(final int position, final boolean checked) {
+		mSelectedIndex.put(position, checked);
+		notifyDataSetChanged();
+	}
 
-    public void setChoiceMode(boolean mode) {
-        mSelectedIndex.clear();
-        mChoiceMode = mode;
-    }
+	public boolean isInChoiceMode() {
+		return mChoiceMode;
+	}
 
-    public void selectAll(boolean checked) {
-        Cursor cursor = getCursor();
-        for (int i = 0; i < getCount(); i++) {
-            if (cursor.moveToPosition(i)) {
-                if (NoteItemData.getNoteType(cursor) == Notes.TYPE_NOTE) {
-                    setCheckedItem(i, checked);
-                }
-            }
-        }
-    }
+	public void setChoiceMode(boolean mode) {
+		mSelectedIndex.clear();
+		mChoiceMode = mode;
+	}
 
-    public HashSet<Long> getSelectedItemIds() {
-        HashSet<Long> itemSet = new HashSet<Long>();
-        for (Integer position : mSelectedIndex.keySet()) {
-            if (mSelectedIndex.get(position) == true) {
-                Long id = getItemId(position);
-                if (id == Notes.ID_ROOT_FOLDER) {
-                    Log.d(TAG, "Wrong item id, should not happen");
-                } else {
-                    itemSet.add(id);
-                }
-            }
-        }
+	public void selectAll(boolean checked) {
+		Cursor cursor = getCursor();
+		for (int i = 0; i < getCount(); i++) {
+			if (cursor.moveToPosition(i)) {
+				if (NoteItemData.getNoteType(cursor) == Notes.TYPE_NOTE) {
+					setCheckedItem(i, checked);
+				}
+			}
+		}
+	}
 
-        return itemSet;
-    }
+	public HashSet<Long> getSelectedItemIds() {
+		HashSet<Long> itemSet = new HashSet<Long>();
+		for (Integer position : mSelectedIndex.keySet()) {
+			if (mSelectedIndex.get(position) == true) {
+				Long id = getItemId(position);
+				if (id == Notes.ID_ROOT_FOLDER) {
+					Log.d(TAG, "Wrong item id, should not happen");
+				} else {
+					itemSet.add(id);
+				}
+			}
+		}
 
-    public HashSet<AppWidgetAttribute> getSelectedWidget() {
-        HashSet<AppWidgetAttribute> itemSet = new HashSet<AppWidgetAttribute>();
-        for (Integer position : mSelectedIndex.keySet()) {
-            if (mSelectedIndex.get(position) == true) {
-                Cursor c = (Cursor) getItem(position);
-                if (c != null) {
-                    AppWidgetAttribute widget = new AppWidgetAttribute();
-                    NoteItemData item = new NoteItemData(mContext, c);
-                    widget.widgetId = item.getWidgetId();
-                    widget.widgetType = item.getWidgetType();
-                    itemSet.add(widget);
-                    /**
-                     * Don't close cursor here, only the adapter could close it
-                     */
-                } else {
-                    Log.e(TAG, "Invalid cursor");
-                    return null;
-                }
-            }
-        }
-        return itemSet;
-    }
+		return itemSet;
+	}
 
-    public int getSelectedCount() {
-        Collection<Boolean> values = mSelectedIndex.values();
-        if (null == values) {
-            return 0;
-        }
-        Iterator<Boolean> iter = values.iterator();
-        int count = 0;
-        while (iter.hasNext()) {
-            if (true == iter.next()) {
-                count++;
-            }
-        }
-        return count;
-    }
+	public HashSet<AppWidgetAttribute> getSelectedWidget() {
+		HashSet<AppWidgetAttribute> itemSet = new HashSet<AppWidgetAttribute>();
+		for (Integer position : mSelectedIndex.keySet()) {
+			if (mSelectedIndex.get(position) == true) {
+				Cursor c = (Cursor) getItem(position);
+				if (c != null) {
+					AppWidgetAttribute widget = new AppWidgetAttribute();
+					NoteItemData item = new NoteItemData(mContext, c);
+					widget.widgetId = item.getWidgetId();
+					widget.widgetType = item.getWidgetType();
+					itemSet.add(widget);
+					/**
+					 * Don't close cursor here, only the adapter could close it
+					 */
+				} else {
+					Log.e(TAG, "Invalid cursor");
+					return null;
+				}
+			}
+		}
+		return itemSet;
+	}
 
-    public boolean isAllSelected() {
-        int checkedCount = getSelectedCount();
-        return (checkedCount != 0 && checkedCount == mNotesCount);
-    }
+	public int getSelectedCount() {
+		Collection<Boolean> values = mSelectedIndex.values();
+		if (null == values) {
+			return 0;
+		}
+		Iterator<Boolean> iter = values.iterator();
+		int count = 0;
+		while (iter.hasNext()) {
+			if (true == iter.next()) {
+				count++;
+			}
+		}
+		return count;
+	}
 
-    public boolean isSelectedItem(final int position) {
-        if (null == mSelectedIndex.get(position)) {
-            return false;
-        }
-        return mSelectedIndex.get(position);
-    }
+	public boolean isAllSelected() {
+		int checkedCount = getSelectedCount();
+		return (checkedCount != 0 && checkedCount == mNotesCount);
+	}
 
-    @Override
-    protected void onContentChanged() {
-        super.onContentChanged();
-        calcNotesCount();
-    }
+	public boolean isSelectedItem(final int position) {
+		if (null == mSelectedIndex.get(position)) {
+			return false;
+		}
+		return mSelectedIndex.get(position);
+	}
 
-    @Override
-    public void changeCursor(Cursor cursor) {
-        super.changeCursor(cursor);
-        calcNotesCount();
-    }
+	@Override
+	protected void onContentChanged() {
+		super.onContentChanged();
+		calcNotesCount();
+	}
 
-    private void calcNotesCount() {
-        mNotesCount = 0;
-        for (int i = 0; i < getCount(); i++) {
-            Cursor c = (Cursor) getItem(i);
-            if (c != null) {
-                if (NoteItemData.getNoteType(c) == Notes.TYPE_NOTE) {
-                    mNotesCount++;
-                }
-            } else {
-                Log.e(TAG, "Invalid cursor");
-                return;
-            }
-        }
-    }
+	@Override
+	public void changeCursor(Cursor cursor) {
+		super.changeCursor(cursor);
+		calcNotesCount();
+	}
+
+	private void calcNotesCount() {
+		mNotesCount = 0;
+		for (int i = 0; i < getCount(); i++) {
+			Cursor c = (Cursor) getItem(i);
+			if (c != null) {
+				if (NoteItemData.getNoteType(c) == Notes.TYPE_NOTE) {
+					mNotesCount++;
+				}
+			} else {
+				Log.e(TAG, "Invalid cursor");
+				return;
+			}
+		}
+	}
 }

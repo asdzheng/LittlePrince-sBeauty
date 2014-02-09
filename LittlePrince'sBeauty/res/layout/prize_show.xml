@@ -4,18 +4,7 @@
     android:layout_height="fill_parent"
     android:background="@drawable/widget_4x_red"
     android:orientation="vertical" >
-    
-    <!--  
-        <ImageView
-            android:id="@+id/ima"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_above="@+id/prize_title"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/mm_gold" />
-    
-    -->
+
     <!--
 	 必须设置
 	 android:layout_width
@@ -51,9 +40,6 @@
             android:padding="20dp"
             android:text="刮刮看\n有可能让波哥为你做牛做马哟\n一天有三次机会\n刮到就得做到～"
             android:textAppearance="@style/TextAppearanceNormal" />
-            
-            
-
     </RelativeLayout>
 
     <com.asd.littleprincesbeauty.ui.Text_Rubbler
@@ -64,9 +50,8 @@
         android:layout_centerVertical="true"
         android:gravity="center"
         android:padding="10dp"
-        
-      android:textAppearance="@style/TextAppearancePrimaryItem"/>
-    
+        android:textAppearance="@style/TextAppearancePrimaryItem" />
+
     <RelativeLayout
         android:id="@+id/prize_content"
         android:layout_width="match_parent"
@@ -75,47 +60,43 @@
         android:orientation="vertical"
         android:paddingTop="10dp" >
 
-         <TextView 
+        <TextView
             android:id="@+id/prize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
             android:text="今天的大奖："
             android:textAppearance="@style/TextAppearanceNormal" />
-        
-        
-         <TextView 
+
+        <TextView
             android:id="@+id/prize_01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             android:layout_below="@+id/prize"
-            android:paddingTop="10dp"
+            android:layout_below="@+id/prize"
             android:paddingLeft="80dp"
+            android:paddingTop="10dp"
             android:text=""
             android:textAppearance="@style/TextAppearanceNormal" />
-          <TextView 
+
+        <TextView
             android:id="@+id/prize_02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             android:paddingTop="10dp"
-            android:paddingLeft="80dp"
             android:layout_below="@+id/prize_01"
+            android:paddingLeft="80dp"
+            android:paddingTop="10dp"
             android:text=""
             android:textAppearance="@style/TextAppearanceNormal" />
-           <TextView 
+
+        <TextView
             android:id="@+id/prize_03"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             android:paddingTop="10dp"
-            android:paddingLeft="80dp"
-            
             android:layout_below="@+id/prize_02"
+            android:paddingLeft="80dp"
+            android:paddingTop="10dp"
             android:text=""
             android:textAppearance="@style/TextAppearanceNormal" />
-        
-        
     </RelativeLayout>
-    
-   
 
 </RelativeLayout>

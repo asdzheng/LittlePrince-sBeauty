@@ -130,41 +130,41 @@
     <TextView
         android:id="@+id/text11"
         style="@style/myTextView"
-                android:paddingLeft="54dp"
-        android:paddingTop="10dp"
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
+        android:paddingLeft="54dp"
+        android:paddingTop="10dp"
         android:text="@string/text11" />
 
     <TextView
         android:id="@+id/text12"
         style="@style/myTextView"
-                        android:paddingLeft="54dp"
-        android:paddingTop="30dp"
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
+        android:paddingLeft="54dp"
+        android:paddingTop="30dp"
         android:text="@string/text12" />
 
     <TextView
         android:id="@+id/text13"
         style="@style/myTextView"
-                        android:paddingLeft="54dp"
-        android:paddingTop="50dp"
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
+        android:paddingLeft="54dp"
+        android:paddingTop="50dp"
         android:text="@string/text13" />
 
     <TextView
         android:id="@+id/text14"
         style="@style/myTextView"
-                        android:paddingLeft="54dp"
-        android:paddingTop="70dp"
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
+        android:paddingLeft="54dp"
+        android:paddingTop="70dp"
         android:text="@string/text14" />
 
 </RelativeLayout>

@@ -15,6 +15,7 @@
  */
 
 package com.asd.littleprincesbeauty.model;
+
 import android.content.ContentProviderOperation;
 import android.content.ContentProviderResult;
 import android.content.ContentUris;
@@ -25,8 +26,6 @@ import android.net.Uri;
 import android.os.RemoteException;
 import android.util.Log;
 
-
-
 import java.util.ArrayList;
 
 import com.asd.littleprincesbeauty.data.tool.Notes;
@@ -35,220 +34,241 @@ import com.asd.littleprincesbeauty.data.tool.Notes.DataColumns;
 import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
 import com.asd.littleprincesbeauty.data.tool.Notes.TextNote;
 
-
 public class Note {
-    private ContentValues mNoteDiffValues;
-    private NoteData mNoteData;
-    private static final String TAG = "Note";
-    /**
-     * Create a new note id for adding a new note to databases
-     */
-    public static synchronized long getNewNoteId(Context context) {
-        // Create a new note in the database
-        ContentValues values = new ContentValues();
-        long createdTime = System.currentTimeMillis();
-        values.put(NoteColumns.CREATED_DATE, createdTime);
-        values.put(NoteColumns.MODIFIED_DATE, createdTime);
-        values.put(NoteColumns.TYPE, Notes.TYPE_NOTE);
-        values.put(NoteColumns.LOCAL_MODIFIED, 1);
-        Uri uri = context.getContentResolver().insert(Notes.CONTENT_NOTE_URI, values);
+	private ContentValues mNoteDiffValues;
+	private NoteData mNoteData;
+	private static final String TAG = "Note";
 
-        long noteId = 0;
-        try {
-            noteId = Long.valueOf(uri.getPathSegments().get(1));
-        } catch (NumberFormatException e) {
-            Log.e(TAG, "Get note id error :" + e.toString());
-            noteId = 0;
-        }
-        if (noteId == -1) {
-            throw new IllegalStateException("Wrong note id:" + noteId);
-        }
-        return noteId;
-    }
+	/**
+	 * Create a new note id for adding a new note to databases
+	 */
+	public static synchronized long getNewNoteId(Context context) {
+		// Create a new note in the database
+		ContentValues values = new ContentValues();
+		long createdTime = System.currentTimeMillis();
+		values.put(NoteColumns.CREATED_DATE, createdTime);
+		values.put(NoteColumns.MODIFIED_DATE, createdTime);
+		values.put(NoteColumns.TYPE, Notes.TYPE_NOTE);
+		values.put(NoteColumns.LOCAL_MODIFIED, 1);
+		Uri uri = context.getContentResolver().insert(Notes.CONTENT_NOTE_URI,
+				values);
 
-    public Note() {
-        mNoteDiffValues = new ContentValues();
-        mNoteData = new NoteData();
-    }
+		long noteId = 0;
+		try {
+			noteId = Long.valueOf(uri.getPathSegments().get(1));
+		} catch (NumberFormatException e) {
+			Log.e(TAG, "Get note id error :" + e.toString());
+			noteId = 0;
+		}
+		if (noteId == -1) {
+			throw new IllegalStateException("Wrong note id:" + noteId);
+		}
+		return noteId;
+	}
 
-    public void setNoteValue(String key, String value) {
-        mNoteDiffValues.put(key, value);
-        mNoteDiffValues.put(NoteColumns.LOCAL_MODIFIED, 1);
-        mNoteDiffValues.put(NoteColumns.MODIFIED_DATE, System.currentTimeMillis());
-    }
+	public Note() {
+		mNoteDiffValues = new ContentValues();
+		mNoteData = new NoteData();
+	}
 
-    public void setTextData(String key, String value) {
-        mNoteData.setTextData(key, value);
-    }
+	public void setNoteValue(String key, String value) {
+		mNoteDiffValues.put(key, value);
+		mNoteDiffValues.put(NoteColumns.LOCAL_MODIFIED, 1);
+		mNoteDiffValues.put(NoteColumns.MODIFIED_DATE,
+				System.currentTimeMillis());
+	}
 
-    public void setTextDataId(long id) {
-        mNoteData.setTextDataId(id);
-    }
+	public void setTextData(String key, String value) {
+		mNoteData.setTextData(key, value);
+	}
 
-    public long getTextDataId() {
-        return mNoteData.mTextDataId;
-    }
+	public void setTextDataId(long id) {
+		mNoteData.setTextDataId(id);
+	}
 
-    public void setCallDataId(long id) {
-        mNoteData.setCallDataId(id);
-    }
+	public long getTextDataId() {
+		return mNoteData.mTextDataId;
+	}
 
-    public void setCallData(String key, String value) {
-        mNoteData.setCallData(key, value);
-    }
+	public void setCallDataId(long id) {
+		mNoteData.setCallDataId(id);
+	}
 
-    public boolean isLocalModified() {
-        return mNoteDiffValues.size() > 0 || mNoteData.isLocalModified();
-    }
+	public void setCallData(String key, String value) {
+		mNoteData.setCallData(key, value);
+	}
 
-    public boolean syncNote(Context context, long noteId) {
-        if (noteId <= 0) {
-            throw new IllegalArgumentException("Wrong note id:" + noteId);
-        }
+	public boolean isLocalModified() {
+		return mNoteDiffValues.size() > 0 || mNoteData.isLocalModified();
+	}
 
-        if (!isLocalModified()) {
-            return true;
-        }
+	public boolean syncNote(Context context, long noteId) {
+		if (noteId <= 0) {
+			throw new IllegalArgumentException("Wrong note id:" + noteId);
+		}
 
-        /**
-         * In theory, once data changed, the note should be updated on {@link NoteColumns#LOCAL_MODIFIED} and
-         * {@link NoteColumns#MODIFIED_DATE}. For data safety, though update note fails, we also update the
-         * note data info
-         */
-        if (context.getContentResolver().update(
-                ContentUris.withAppendedId(Notes.CONTENT_NOTE_URI, noteId), mNoteDiffValues, null,
-                null) == 0) {
-            Log.e(TAG, "Update note error, should not happen");
-            // Do not return, fall through
-        }
-        mNoteDiffValues.clear();
+		if (!isLocalModified()) {
+			return true;
+		}
 
-        if (mNoteData.isLocalModified()
-                && (mNoteData.pushIntoContentResolver(context, noteId) == null)) {
-            return false;
-        }
+		/**
+		 * In theory, once data changed, the note should be updated on
+		 * {@link NoteColumns#LOCAL_MODIFIED} and
+		 * {@link NoteColumns#MODIFIED_DATE}. For data safety, though update
+		 * note fails, we also update the note data info
+		 */
+		if (context.getContentResolver().update(
+				ContentUris.withAppendedId(Notes.CONTENT_NOTE_URI, noteId),
+				mNoteDiffValues, null, null) == 0) {
+			Log.e(TAG, "Update note error, should not happen");
+			// Do not return, fall through
+		}
+		mNoteDiffValues.clear();
 
-        return true;
-    }
+		if (mNoteData.isLocalModified()
+				&& (mNoteData.pushIntoContentResolver(context, noteId) == null)) {
+			return false;
+		}
 
-    private class NoteData {
-        private long mTextDataId;
+		return true;
+	}
 
-        private ContentValues mTextDataValues;
+	private class NoteData {
+		private long mTextDataId;
 
-        private long mCallDataId;
+		private ContentValues mTextDataValues;
 
-        private ContentValues mCallDataValues;
+		private long mCallDataId;
 
-        private static final String TAG = "NoteData";
+		private ContentValues mCallDataValues;
 
-        public NoteData() {
-            mTextDataValues = new ContentValues();
-            mCallDataValues = new ContentValues();
-            mTextDataId = 0;
-            mCallDataId = 0;
-        }
+		private static final String TAG = "NoteData";
 
-        boolean isLocalModified() {
-            return mTextDataValues.size() > 0 || mCallDataValues.size() > 0;
-        }
+		public NoteData() {
+			mTextDataValues = new ContentValues();
+			mCallDataValues = new ContentValues();
+			mTextDataId = 0;
+			mCallDataId = 0;
+		}
 
-        void setTextDataId(long id) {
-            if(id <= 0) {
-                throw new IllegalArgumentException("Text data id should larger than 0");
-            }
-            mTextDataId = id;
-        }
+		boolean isLocalModified() {
+			return mTextDataValues.size() > 0 || mCallDataValues.size() > 0;
+		}
 
-        void setCallDataId(long id) {
-            if (id <= 0) {
-                throw new IllegalArgumentException("Call data id should larger than 0");
-            }
-            mCallDataId = id;
-        }
+		void setTextDataId(long id) {
+			if (id <= 0) {
+				throw new IllegalArgumentException(
+						"Text data id should larger than 0");
+			}
+			mTextDataId = id;
+		}
 
-        void setCallData(String key, String value) {
-            mCallDataValues.put(key, value);
-            mNoteDiffValues.put(NoteColumns.LOCAL_MODIFIED, 1);
-            mNoteDiffValues.put(NoteColumns.MODIFIED_DATE, System.currentTimeMillis());
-        }
+		void setCallDataId(long id) {
+			if (id <= 0) {
+				throw new IllegalArgumentException(
+						"Call data id should larger than 0");
+			}
+			mCallDataId = id;
+		}
 
-        void setTextData(String key, String value) {
-            mTextDataValues.put(key, value);
-            mNoteDiffValues.put(NoteColumns.LOCAL_MODIFIED, 1);
-            mNoteDiffValues.put(NoteColumns.MODIFIED_DATE, System.currentTimeMillis());
-        }
+		void setCallData(String key, String value) {
+			mCallDataValues.put(key, value);
+			mNoteDiffValues.put(NoteColumns.LOCAL_MODIFIED, 1);
+			mNoteDiffValues.put(NoteColumns.MODIFIED_DATE,
+					System.currentTimeMillis());
+		}
 
-        Uri pushIntoContentResolver(Context context, long noteId) {
-            /**
-             * Check for safety
-             */
-            if (noteId <= 0) {
-                throw new IllegalArgumentException("Wrong note id:" + noteId);
-            }
+		void setTextData(String key, String value) {
+			mTextDataValues.put(key, value);
+			mNoteDiffValues.put(NoteColumns.LOCAL_MODIFIED, 1);
+			mNoteDiffValues.put(NoteColumns.MODIFIED_DATE,
+					System.currentTimeMillis());
+		}
 
-            ArrayList<ContentProviderOperation> operationList = new ArrayList<ContentProviderOperation>();
-            ContentProviderOperation.Builder builder = null;
+		Uri pushIntoContentResolver(Context context, long noteId) {
+			/**
+			 * Check for safety
+			 */
+			if (noteId <= 0) {
+				throw new IllegalArgumentException("Wrong note id:" + noteId);
+			}
 
-            if(mTextDataValues.size() > 0) {
-                mTextDataValues.put(DataColumns.NOTE_ID, noteId);
-                if (mTextDataId == 0) {
-                    mTextDataValues.put(DataColumns.MIME_TYPE, TextNote.CONTENT_ITEM_TYPE);
-                    Uri uri = context.getContentResolver().insert(Notes.CONTENT_DATA_URI,
-                            mTextDataValues);
-                    try {
-                        setTextDataId(Long.valueOf(uri.getPathSegments().get(1)));
-                    } catch (NumberFormatException e) {
-                        Log.e(TAG, "Insert new text data fail with noteId" + noteId);
-                        mTextDataValues.clear();
-                        return null;
-                    }
-                } else {
-                    builder = ContentProviderOperation.newUpdate(ContentUris.withAppendedId(
-                            Notes.CONTENT_DATA_URI, mTextDataId));
-                    builder.withValues(mTextDataValues);
-                    operationList.add(builder.build());
-                }
-                mTextDataValues.clear();
-            }
+			ArrayList<ContentProviderOperation> operationList = new ArrayList<ContentProviderOperation>();
+			ContentProviderOperation.Builder builder = null;
 
-            if(mCallDataValues.size() > 0) {
-                mCallDataValues.put(DataColumns.NOTE_ID, noteId);
-                if (mCallDataId == 0) {
-                    mCallDataValues.put(DataColumns.MIME_TYPE, CallNote.CONTENT_ITEM_TYPE);
-                    Uri uri = context.getContentResolver().insert(Notes.CONTENT_DATA_URI,
-                            mCallDataValues);
-                    try {
-                        setCallDataId(Long.valueOf(uri.getPathSegments().get(1)));
-                    } catch (NumberFormatException e) {
-                        Log.e(TAG, "Insert new call data fail with noteId" + noteId);
-                        mCallDataValues.clear();
-                        return null;
-                    }
-                } else {
-                    builder = ContentProviderOperation.newUpdate(ContentUris.withAppendedId(
-                            Notes.CONTENT_DATA_URI, mCallDataId));
-                    builder.withValues(mCallDataValues);
-                    operationList.add(builder.build());
-                }
-                mCallDataValues.clear();
-            }
+			if (mTextDataValues.size() > 0) {
+				mTextDataValues.put(DataColumns.NOTE_ID, noteId);
+				if (mTextDataId == 0) {
+					mTextDataValues.put(DataColumns.MIME_TYPE,
+							TextNote.CONTENT_ITEM_TYPE);
+					Uri uri = context.getContentResolver().insert(
+							Notes.CONTENT_DATA_URI, mTextDataValues);
+					try {
+						setTextDataId(Long
+								.valueOf(uri.getPathSegments().get(1)));
+					} catch (NumberFormatException e) {
+						Log.e(TAG, "Insert new text data fail with noteId"
+								+ noteId);
+						mTextDataValues.clear();
+						return null;
+					}
+				} else {
+					builder = ContentProviderOperation
+							.newUpdate(ContentUris.withAppendedId(
+									Notes.CONTENT_DATA_URI, mTextDataId));
+					builder.withValues(mTextDataValues);
+					operationList.add(builder.build());
+				}
+				mTextDataValues.clear();
+			}
 
-            if (operationList.size() > 0) {
-                try {
-                    ContentProviderResult[] results = context.getContentResolver().applyBatch(
-                            Notes.AUTHORITY, operationList);
-                    return (results == null || results.length == 0 || results[0] == null) ? null
-                            : ContentUris.withAppendedId(Notes.CONTENT_NOTE_URI, noteId);
-                } catch (RemoteException e) {
-                    Log.e(TAG, String.format("%s: %s", e.toString(), e.getMessage()));
-                    return null;
-                } catch (OperationApplicationException e) {
-                    Log.e(TAG, String.format("%s: %s", e.toString(), e.getMessage()));
-                    return null;
-                }
-            }
-            return null;
-        }
-    }
+			if (mCallDataValues.size() > 0) {
+				mCallDataValues.put(DataColumns.NOTE_ID, noteId);
+				if (mCallDataId == 0) {
+					mCallDataValues.put(DataColumns.MIME_TYPE,
+							CallNote.CONTENT_ITEM_TYPE);
+					Uri uri = context.getContentResolver().insert(
+							Notes.CONTENT_DATA_URI, mCallDataValues);
+					try {
+						setCallDataId(Long
+								.valueOf(uri.getPathSegments().get(1)));
+					} catch (NumberFormatException e) {
+						Log.e(TAG, "Insert new call data fail with noteId"
+								+ noteId);
+						mCallDataValues.clear();
+						return null;
+					}
+				} else {
+					builder = ContentProviderOperation
+							.newUpdate(ContentUris.withAppendedId(
+									Notes.CONTENT_DATA_URI, mCallDataId));
+					builder.withValues(mCallDataValues);
+					operationList.add(builder.build());
+				}
+				mCallDataValues.clear();
+			}
+
+			if (operationList.size() > 0) {
+				try {
+					ContentProviderResult[] results = context
+							.getContentResolver().applyBatch(Notes.AUTHORITY,
+									operationList);
+					return (results == null || results.length == 0 || results[0] == null) ? null
+							: ContentUris.withAppendedId(
+									Notes.CONTENT_NOTE_URI, noteId);
+				} catch (RemoteException e) {
+					Log.e(TAG,
+							String.format("%s: %s", e.toString(),
+									e.getMessage()));
+					return null;
+				} catch (OperationApplicationException e) {
+					Log.e(TAG,
+							String.format("%s: %s", e.toString(),
+									e.getMessage()));
+					return null;
+				}
+			}
+			return null;
+		}
+	}
 }

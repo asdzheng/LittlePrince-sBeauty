@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Copyright (c) 2010-2011, The MiCode Open Source Community (www.micode.net)
+<!--
+     Copyright (c) 2010-2011, The MiCode Open Source Community (www.micode.net)
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,27 +16,26 @@
      limitations under the License.
 -->
 
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/list_background">
+    android:background="@drawable/list_background" >
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical">
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/tv_title_bar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/title_bar_bg"
-            android:visibility="gone"
             android:gravity="center_vertical"
             android:singleLine="true"
             android:textColor="#FFEAD1AE"
-            android:textSize="@dimen/text_font_size_medium" />
+            android:textSize="@dimen/text_font_size_medium"
+            android:visibility="gone" />
 
         <ListView
             android:id="@+id/notes_list"
@@ -43,9 +43,9 @@
             android:layout_height="0dip"
             android:layout_weight="1"
             android:cacheColorHint="@null"
-            android:listSelector="@android:color/transparent"
             android:divider="@null"
-            android:fadingEdge="@null" />
+            android:fadingEdge="@null"
+            android:listSelector="@android:color/transparent" />
     </LinearLayout>
 
     <Button

@@ -167,8 +167,7 @@ public class NoteEditActivity extends Activity implements OnClickListener,
 		 * If the user specified the {@link Intent#ACTION_VIEW} but not provided
 		 * with id, then jump to the NotesListActivity
 		 */
-		System.out.println("getAction ====================="
-				+ intent.getAction());
+
 		mWorkingNote = null;
 
 		if (TextUtils.equals(Intent.ACTION_VIEW, intent.getAction())) {

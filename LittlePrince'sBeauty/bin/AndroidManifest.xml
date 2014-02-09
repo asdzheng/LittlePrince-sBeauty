@@ -46,11 +46,10 @@
         </activity>
         <activity android:name="com.asd.littleprincesbeauty.activity.PlayMusicActivity" >
         </activity>
-        
-        <activity android:name="com.asd.littleprincesbeauty.activity.RubblerActivity"
-            	  android:theme="@android:style/Theme.Black.NoTitleBar"
-            
-            ></activity>
+        <activity
+            android:name="com.asd.littleprincesbeauty.activity.RubblerActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
 
         <service android:name="com.asd.littleprincesbeauty.service.PlayMusicService" >
             <intent-filter>

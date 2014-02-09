@@ -15,7 +15,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-public class Text_Rubbler extends TextView{
+public class Text_Rubbler extends TextView {
 	private float TOUCH_TOLERANCE; // 填充距离，使线条更自然，柔和,值越小，越柔和。
 
 	// private final int bgColor;
@@ -163,7 +163,7 @@ public class Text_Rubbler extends TextView{
 		mCanvas.drawPath(mPath, mPaint);
 		mPath.reset();
 	}
-	
+
 	private void setSharedPrefences() {
 		RubblerActivity rubblerActivity = new RubblerActivity();
 		rubblerActivity.setSharedPrefences(ctx, text, num);
