@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="显示歌名"
+            android:text="@string/music_title"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
             android:textStyle="bold" />

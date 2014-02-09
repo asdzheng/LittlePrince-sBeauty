@@ -39,5 +39,11 @@
     
     <string name="menu_delete">Delete</string>
     <string name="menu_send">Send Message</string>
+    
+    <string name="prize_note">刮刮看\n有可能让波哥为你做牛做马哟\n一天有三次机会\n刮到就得做到～</string>
+    <string name="title">规则</string>
+    <string name="today_prize">今天的大奖：</string>
+    
+    <string name="music_title">显示歌名</string>
 
 </resources>

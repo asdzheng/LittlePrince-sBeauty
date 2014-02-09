@@ -27,7 +27,7 @@
             android:layout_alignLeft="@+id/prize_to2"
             android:layout_alignParentTop="true"
             android:layout_marginTop="16dp"
-            android:text="规则"
+            android:text="@string/title"
             android:textAppearance="@style/TextAppearanceMedium" />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="18dp"
             android:padding="20dp"
-            android:text="刮刮看\n有可能让波哥为你做牛做马哟\n一天有三次机会\n刮到就得做到～"
+            android:text="@string/prize_note"
             android:textAppearance="@style/TextAppearanceNormal" />
     </RelativeLayout>
 
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
-            android:text="今天的大奖："
+            android:text="@string/today_prize"
             android:textAppearance="@style/TextAppearanceNormal" />
 
         <TextView
