@@ -1,0 +1,170 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_gradient"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo" >
+    </ImageView>
+    <!--
+         android:scaleType是控制图片如何resized/moved来匹对ImageView的size CENTER_INSIDE 
+		/ centerInside 将图片的内容完整居中显示，通过按比例缩小或原来的size使得图片长/宽等于或小于View的长/宽
+    -->
+
+    <ImageView
+        android:id="@+id/head"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignRight="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="47dp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/text1"
+        style="@style/myTextView"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:padding="10dp"
+        android:text="@string/text1" />
+
+    <TextView
+        android:id="@+id/text2"
+        style="@style/myTextView"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:paddingLeft="10dp"
+        android:paddingTop="30dp"
+        android:text="@string/text2" />
+
+    <TextView
+        android:id="@+id/text3"
+        style="@style/myTextView"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:paddingLeft="32dp"
+        android:paddingTop="10dp"
+        android:text="@string/text3" />
+
+    <TextView
+        android:id="@+id/text4"
+        style="@style/myTextView"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:paddingLeft="32dp"
+        android:paddingTop="30dp"
+        android:text="@string/text4" />
+
+    <TextView
+        android:id="@+id/text5"
+        style="@style/myTextView"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:paddingLeft="32dp"
+        android:paddingTop="50dp"
+        android:text="@string/text5" />
+
+    <TextView
+        android:id="@+id/text6"
+        style="@style/myTextView"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:paddingLeft="32dp"
+        android:paddingTop="70dp"
+        android:text="@string/text6" />
+
+    <TextView
+        android:id="@+id/text7"
+        style="@style/myTextView"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:paddingLeft="32dp"
+        android:paddingTop="90dp"
+        android:text="@string/text7" />
+
+    <TextView
+        android:id="@+id/text8"
+        style="@style/myTextView"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:paddingLeft="32dp"
+        android:paddingTop="110dp"
+        android:text="@string/text8" />
+
+    <TextView
+        android:id="@+id/text9"
+        style="@style/myTextView"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:paddingLeft="32dp"
+        android:paddingTop="130dp"
+        android:text="@string/text9" />
+
+    <TextView
+        android:id="@+id/text10"
+        style="@style/myTextView"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:paddingLeft="32dp"
+        android:paddingTop="150dp"
+        android:text="@string/text10" />
+
+    <TextView
+        android:id="@+id/text11"
+        style="@style/myTextView"
+                android:paddingLeft="54dp"
+        android:paddingTop="10dp"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:text="@string/text11" />
+
+    <TextView
+        android:id="@+id/text12"
+        style="@style/myTextView"
+                        android:paddingLeft="54dp"
+        android:paddingTop="30dp"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:text="@string/text12" />
+
+    <TextView
+        android:id="@+id/text13"
+        style="@style/myTextView"
+                        android:paddingLeft="54dp"
+        android:paddingTop="50dp"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:text="@string/text13" />
+
+    <TextView
+        android:id="@+id/text14"
+        style="@style/myTextView"
+                        android:paddingLeft="54dp"
+        android:paddingTop="70dp"
+        android:layout_alignLeft="@id/logo"
+        android:layout_alignTop="@id/logo"
+        android:gravity="top"
+        android:text="@string/text14" />
+
+</RelativeLayout>

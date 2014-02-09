@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/widget_4x_red"
+    android:orientation="vertical" >
+    
+    <!--  
+        <ImageView
+            android:id="@+id/ima"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_above="@+id/prize_title"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/mm_gold" />
+    
+    -->
+    <!--
+	 必须设置
+	 android:layout_width
+	 android:layout_height 
+	 的值为常量
+    -->
+
+    <RelativeLayout
+        android:id="@+id/prize_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp" >
+
+        <TextView
+            android:id="@+id/prize_to1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/prize_to2"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="规则"
+            android:textAppearance="@style/TextAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/prize_to2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prize_to1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:padding="20dp"
+            android:text="刮刮看\n有可能让波哥为你做牛做马哟\n一天有三次机会\n刮到就得做到～"
+            android:textAppearance="@style/TextAppearanceNormal" />
+            
+            
+
+    </RelativeLayout>
+
+    <com.asd.littleprincesbeauty.ui.Text_Rubbler
+        android:id="@+id/rubbler"
+        android:layout_width="250dip"
+        android:layout_height="90dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:padding="10dp"
+        
+      android:textAppearance="@style/TextAppearancePrimaryItem"/>
+    
+    <RelativeLayout
+        android:id="@+id/prize_content"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@+id/rubbler"
+        android:orientation="vertical"
+        android:paddingTop="10dp" >
+
+         <TextView 
+            android:id="@+id/prize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="今天的大奖："
+            android:textAppearance="@style/TextAppearanceNormal" />
+        
+        
+         <TextView 
+            android:id="@+id/prize_01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_below="@+id/prize"
+            android:paddingTop="10dp"
+            android:paddingLeft="80dp"
+            android:text=""
+            android:textAppearance="@style/TextAppearanceNormal" />
+          <TextView 
+            android:id="@+id/prize_02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:paddingTop="10dp"
+            android:paddingLeft="80dp"
+            android:layout_below="@+id/prize_01"
+            android:text=""
+            android:textAppearance="@style/TextAppearanceNormal" />
+           <TextView 
+            android:id="@+id/prize_03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:paddingTop="10dp"
+            android:paddingLeft="80dp"
+            
+            android:layout_below="@+id/prize_02"
+            android:text=""
+            android:textAppearance="@style/TextAppearanceNormal" />
+        
+        
+    </RelativeLayout>
+    
+   
+
+</RelativeLayout>
