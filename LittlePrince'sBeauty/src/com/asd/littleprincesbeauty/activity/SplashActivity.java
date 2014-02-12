@@ -21,9 +21,32 @@ public class SplashActivity extends Activity {
 			textView12, textView13, textView14;
 
 	ImageView head, logo;
+	final static long DISAPPEAR_TIME = 30000;
+	final static long LOAD_MAINTAB_TIME = 1000;
+	final static long START_ROTATE_TIME = 30000;
+	
+	final static long HEAD_SHOW_TIME = 10000;
+	final static long HEAD_DURATION_TIME = 2000;
 
-	final static long DURATION_TIME = 3000;
-	final static long CLOSE_DURATION_TIME = 1;
+	
+	final static long TEXT_SHOW_TIME = 2000;
+	final static long TEXT_DURATION_TIME = 2000;
+//	final static long CLOSE_TEXT_DURATION_TIME = 1;
+
+	private long time1 = TEXT_SHOW_TIME, 
+				 time2 = time1 + TEXT_DURATION_TIME, 
+				 time3 = time2+ TEXT_DURATION_TIME, 
+				 time4 = time3 + TEXT_DURATION_TIME, 
+				 time5 = time4+ TEXT_DURATION_TIME, 
+				 time6 = time5 + TEXT_DURATION_TIME, 
+				 time7 = time6+ TEXT_DURATION_TIME, 
+				 time8 = time7 + TEXT_DURATION_TIME, 
+				 time9 = time8+ TEXT_DURATION_TIME, 
+				 time10 = time9 + TEXT_DURATION_TIME, 
+				 time11 = time10+ TEXT_DURATION_TIME,
+				 time12 = time11 + TEXT_DURATION_TIME, 
+				 time13 = time12+ TEXT_DURATION_TIME,
+				 time14 = time13 + TEXT_DURATION_TIME;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,27 +60,26 @@ public class SplashActivity extends Activity {
 		viewChange(logo);
 		// closeView();
 
-		new Handler().postDelayed(new disAppearView(), 49950);
-		new Handler().postDelayed(new loadMainTabTask(), 500);
+		new Handler().postDelayed(new disAppearView(), DISAPPEAR_TIME);
+		new Handler().postDelayed(new loadMainTabTask(), LOAD_MAINTAB_TIME);
 
 	}
 
 	private void viewChange(View view) {
 		Animation animation = AnimationUtils.loadAnimation(this,
 				R.anim.anim_set);
-		animation.setStartOffset(50000);
+		animation.setStartOffset(START_ROTATE_TIME);
 		animation.setInterpolator(new LinearInterpolator());
 		view.setAnimation(animation);
 	}
 
 	private void showHeadImage() {
 		head.setImageResource(R.drawable.head);
-		AlphaAnimation alphaAnimation1 = new AlphaAnimation(0.0f, 0.5f);
-		alphaAnimation1.setDuration(20000);
-		alphaAnimation1.setStartOffset(30000);
+		AlphaAnimation alphaAnimation1 = new AlphaAnimation(0.0f, 0.6f);
+		alphaAnimation1.setDuration(HEAD_SHOW_TIME);
+		alphaAnimation1.setStartOffset(HEAD_DURATION_TIME);
 		alphaAnimation1.setFillAfter(true);
 		head.setAnimation(alphaAnimation1);
-
 	}
 
 	private void initTab() {
@@ -77,30 +99,28 @@ public class SplashActivity extends Activity {
 		textView12 = (TextView) findViewById(R.id.text12);
 		textView13 = (TextView) findViewById(R.id.text13);
 		textView14 = (TextView) findViewById(R.id.text14);
-
 	}
 
 	private void showTextView() {
-		setTextAnimation(textView1, 2000);
-		setTextAnimation(textView2, 5000);
-		setTextAnimation(textView3, 8000);
-		setTextAnimation(textView4, 11000);
-		setTextAnimation(textView5, 14000);
-		setTextAnimation(textView6, 17000);
-		setTextAnimation(textView7, 20000);
-		setTextAnimation(textView8, 23000);
-		setTextAnimation(textView9, 26000);
-		setTextAnimation(textView10, 29000);
-		setTextAnimation(textView11, 32000);
-		setTextAnimation(textView12, 35000);
-		setTextAnimation(textView13, 38000);
-		setTextAnimation(textView14, 41000);
-
+		setTextAnimation(textView1, time1);
+		setTextAnimation(textView2, time2);
+		setTextAnimation(textView3, time3);
+		setTextAnimation(textView4, time4);
+		setTextAnimation(textView5, time5);
+		setTextAnimation(textView6, time6);
+		setTextAnimation(textView7, time7);
+		setTextAnimation(textView8, time8);
+		setTextAnimation(textView9, time9);
+		setTextAnimation(textView10, time10);
+		setTextAnimation(textView11, time11);
+		setTextAnimation(textView12, time12);
+		setTextAnimation(textView13, time13);
+		setTextAnimation(textView14, time14);
 	}
 
 	private void setTextAnimation(TextView textView, long offset) {
 		AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
-		alphaAnimation.setDuration(DURATION_TIME);
+		alphaAnimation.setDuration(TEXT_DURATION_TIME);
 		alphaAnimation.setStartOffset(offset);
 		textView.setAnimation(alphaAnimation);
 	}
@@ -125,7 +145,6 @@ public class SplashActivity extends Activity {
 			textView13.setVisibility(View.INVISIBLE);
 			textView14.setVisibility(View.INVISIBLE);
 		}
-
 	}
 
 	class loadMainTabTask implements Runnable {
@@ -136,7 +155,6 @@ public class SplashActivity extends Activity {
 			startActivity(intent);
 			finish();
 		}
-
 	}
 
 }

@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
 
 	private Button btn_write;
 	private Button btn_prize;
+	private Button btn_paint;
 	private TextView music;
 
 	@Override
@@ -27,6 +28,7 @@ public class MainActivity extends Activity {
 		music = (TextView) findViewById(R.id.music);
 		btn_write = (Button) findViewById(R.id.write);
 		btn_prize = (Button) findViewById(R.id.prize);
+		btn_paint = (Button) findViewById(R.id.paint);
 
 		btn_write.setOnClickListener(new OnClickListener() {
 
@@ -51,6 +53,14 @@ public class MainActivity extends Activity {
 				prize();
 			}
 		});
+		
+		btn_paint.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				showPaint();
+			}
+		});
 
 	}
 
@@ -73,11 +83,16 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(this, PlayMusicActivity.class);
 		startActivity(intent);
 		finish();
-
 	}
 
 	public void prize() {
 		Intent intent = new Intent(this, RubblerActivity.class);
+		startActivity(intent);
+		finish();
+	}
+	
+	public void showPaint() {
+		Intent intent = new Intent(this, ImageGalleryActivity.class);
 		startActivity(intent);
 		finish();
 	}

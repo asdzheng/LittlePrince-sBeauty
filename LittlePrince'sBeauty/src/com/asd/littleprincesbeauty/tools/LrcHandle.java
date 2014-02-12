@@ -25,6 +25,7 @@ public class LrcHandle {
 			String s = "";
 			while ((s = bufferedReader.readLine()) != null) {
 				addTimeToList(s);
+System.out.println("sss===================" + s);
 				if ((s.indexOf("[ar:") != -1) || (s.indexOf("[ti:") != -1)
 						|| (s.indexOf("[by:") != -1)) {
 					s = s.substring(s.indexOf(":") + 1, s.indexOf("]"));

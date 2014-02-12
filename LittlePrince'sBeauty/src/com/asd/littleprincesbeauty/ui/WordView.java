@@ -91,7 +91,7 @@ public class WordView extends TextView {
 	private void init() throws IOException {
 		setFocusable(true);
 		InputStream inputStream = getContext().getApplicationContext()
-				.getResources().openRawResource(R.raw.star1);
+				.getResources().openRawResource(R.raw.haishan);
 		LrcHandle lrcHandler = new LrcHandle();
 		lrcHandler.readLRC(inputStream);
 		mWordsList = lrcHandler.getWords();

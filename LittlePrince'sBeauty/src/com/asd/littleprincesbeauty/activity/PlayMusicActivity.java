@@ -17,8 +17,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageButton;
-import android.widget.TextView;
-
 import com.asd.littleprincesbeauty.R;
 import com.asd.littleprincesbeauty.tools.LrcHandle;
 import com.asd.littleprincesbeauty.ui.WordView;
@@ -30,7 +28,7 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 	private MediaPlayer mp;// MediaPlayer对象
 	private ImageButton playbtn = null;// 播放按钮
 
-	private TextView music_name = null;
+	//private TextView music_name = null;
 	private static final String MUSIC_CURRENT = "com.music.currentTime";
 	private static final String MUSIC_DURATION = "com.music.duration";
 	private static final String MUSIC_NEXT = "com.music.duration";
@@ -55,14 +53,14 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.paly_music);
 
-		music_name = (TextView) findViewById(R.id.muisc_name);
-		mWordView = (WordView) findViewById(R.id.lrc);// 歌词
-		music_name.setText("星星堆满天");
+		//music_name = (TextView) findViewById(R.id.muisc_name);
+		//mWordView = (WordView) findViewById(R.id.lrc);// 歌词
+		//music_name.setText("星星堆满天");
 
 		thread = new WordViewInvalidateThread();
 		ShowPlayBtn();// 显示或者说监视播放按钮事件
 		initMediaPlayer();
-		initHander();
+		//initHander();
 
 	}
 
@@ -84,9 +82,9 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 			mp.release();
 		}
 		mp = new MediaPlayer();// 实例化MediaPlayer对象
-		mp = MediaPlayer.create(this, R.raw.star);
+		mp = MediaPlayer.create(this, R.raw.haishanggirl);
 		mp.setOnCompletionListener(this);// 设置下一首的监听
-		is = getResources().openRawResource(R.raw.star1);
+		is = getResources().openRawResource(R.raw.haishanggirl);
 	}
 
 	// 显示各个按钮并做监视
@@ -237,14 +235,14 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 					}
 				}
 
-				handler.post(new Runnable() {
+			/*	handler.post(new Runnable() {
 					@Override
 					public void run() {
 						if (current < mTimeList.get(mTimeList.size() - 1)) {
 							mWordView.invalidate();
 						}
 					}
-				});
+				});*/
 
 			}
 		}

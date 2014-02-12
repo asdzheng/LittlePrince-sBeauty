@@ -38,9 +38,9 @@ public class PlayMusicService extends Service implements OnCompletionListener {
 			mp.release();
 		}
 		mp = new MediaPlayer();// 实例化MediaPlayer对象
-		mp = MediaPlayer.create(this, R.raw.star);
+		mp = MediaPlayer.create(this, R.raw.haishanggirl);
 		mp.setOnCompletionListener(this);// 设置下一首的监听
-		is = getResources().openRawResource(R.raw.star1);
+		is = getResources().openRawResource(R.raw.haishanggirl);
 	}
 
 	@Override
@@ -89,7 +89,7 @@ public class PlayMusicService extends Service implements OnCompletionListener {
 		if (mp != null) {
 			mp.start();
 
-			LrcHandle lrcHandle = new LrcHandle();
+			/*LrcHandle lrcHandle = new LrcHandle();
 			lrcHandle.readLRC(is);
 			mTimeList = lrcHandle.getTime();
 			new Thread(new Runnable() {
@@ -120,7 +120,7 @@ public class PlayMusicService extends Service implements OnCompletionListener {
 					}
 				}
 			}).start();
-
+*/
 		}
 		System.out.println("开始播放音乐");
 	}

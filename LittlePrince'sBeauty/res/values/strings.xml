@@ -18,6 +18,7 @@
     <string name="text12">只</string>
     <string name="text13">想</string>
     <string name="text14">你</string>
+    <string name="text15">情</string>
     
     <string name="delete">删除该内容</string>
     <string name="send">分享给波哥</string>
@@ -40,7 +41,7 @@
     <string name="menu_delete">Delete</string>
     <string name="menu_send">Send Message</string>
     
-    <string name="prize_note">刮刮看\n有可能让波哥为你做牛做马哟\n一天有三次机会\n刮到就得做到～</string>
+    <string name="prize_note">刮刮看\n有可能让嘉嘉为你做牛做马哟\n一天有三次机会\n刮到就得做到～</string>
     <string name="title">规则</string>
     <string name="today_prize">今天的大奖：</string>
     

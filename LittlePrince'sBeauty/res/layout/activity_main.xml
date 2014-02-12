@@ -32,4 +32,12 @@
         android:layout_height="wrap_content"
         android:text="抽奖" />
 
+    <Button
+        android:id="@+id/paint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/write"
+        android:layout_below="@+id/write"
+        android:text="aa" />
+
 </RelativeLayout>

@@ -5,7 +5,7 @@
     android:background="@drawable/player_bg"
     android:orientation="vertical" >
 
-    <LinearLayout
+<!--     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center" >
@@ -19,7 +19,7 @@
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
             android:textStyle="bold" />
-    </LinearLayout>
+    </LinearLayout> -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,12 +27,12 @@
         android:gravity="center"
         android:paddingTop="15dp" >
 
-        <com.asd.littleprincesbeauty.ui.WordView
+       <!--  <com.asd.littleprincesbeauty.ui.WordView
             android:id="@+id/lrc"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="340dp"
             android:layout_gravity="center"
-            android:gravity="center" />
+            android:gravity="center" /> -->
     </LinearLayout>
 
     <LinearLayout
