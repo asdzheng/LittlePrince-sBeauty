@@ -54,13 +54,13 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 		setContentView(R.layout.paly_music);
 
 		//music_name = (TextView) findViewById(R.id.muisc_name);
-		//mWordView = (WordView) findViewById(R.id.lrc);// 歌词
+		mWordView = (WordView) findViewById(R.id.lrc);// 歌词
 		//music_name.setText("星星堆满天");
 
 		thread = new WordViewInvalidateThread();
 		ShowPlayBtn();// 显示或者说监视播放按钮事件
 		initMediaPlayer();
-		//initHander();
+		initHander();
 
 	}
 
