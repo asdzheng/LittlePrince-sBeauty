@@ -19,7 +19,7 @@ public class GalleryAdapter extends BaseAdapter {
 
 	private Context context;
 	private int images[] = { R.drawable.normal_meitu, R.drawable.happy_meitu, R.drawable.angry_meitu,
-										R.drawable.charming_meitu, R.drawable.kiss_meitu, R.drawable.wolf};
+										R.drawable.charming_meitu, R.drawable.kiss_meitu, R.drawable.wolf_meitu};
 
 	public GalleryAdapter(Context context) {
 		this.context = context;
