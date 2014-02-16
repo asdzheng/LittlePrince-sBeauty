@@ -4,8 +4,6 @@
  */
 package com.asd.littleprincesbeauty.ui;
 
-import com.asd.littleprincesbeauty.R;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,6 +12,8 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
+
+import com.asd.littleprincesbeauty.R;
 
 public class GalleryAdapter extends BaseAdapter {
 

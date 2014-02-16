@@ -1,16 +1,14 @@
 package com.asd.littleprincesbeauty.activity;
 
-import com.asd.littleprincesbeauty.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.asd.littleprincesbeauty.R;
 
 public class MainActivity extends Activity {
 

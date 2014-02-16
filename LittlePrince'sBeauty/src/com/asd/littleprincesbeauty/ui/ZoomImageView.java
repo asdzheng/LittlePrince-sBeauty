@@ -1,7 +1,5 @@
 package com.asd.littleprincesbeauty.ui;
 
-import com.asd.littleprincesbeauty.activity.ImageGalleryActivity;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
@@ -10,6 +8,8 @@ import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.widget.ImageView;
+
+import com.asd.littleprincesbeauty.activity.ImageGalleryActivity;
 
 
 public class ZoomImageView extends ImageView {

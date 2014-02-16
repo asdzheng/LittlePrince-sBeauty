@@ -16,6 +16,9 @@ package com.asd.littleprincesbeauty.ui;
  * limitations under the License.
  */
 
+import java.util.HashMap;
+import java.util.Map;
+
 import android.content.Context;
 import android.graphics.Rect;
 import android.text.Layout;
@@ -32,10 +35,8 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.MotionEvent;
 import android.widget.EditText;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.asd.littleprincesbeauty.R;
+import com.asd.littleprincesbeauty.activity.NoteEditActivity;
 
 public class NoteEditText extends EditText {
 	private static final String TAG = "NoteEditText";

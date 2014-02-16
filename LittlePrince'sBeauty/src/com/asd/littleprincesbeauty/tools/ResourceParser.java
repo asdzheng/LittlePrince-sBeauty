@@ -16,9 +16,9 @@
 
 package com.asd.littleprincesbeauty.tools;
 
-import com.asd.littleprincesbeauty.R;
-
 import android.content.Context;
+
+import com.asd.littleprincesbeauty.R;
 
 public class ResourceParser {
 

@@ -16,9 +16,9 @@
 
 package com.asd.littleprincesbeauty.data;
 
-import android.database.Cursor;
-
 import org.json.JSONObject;
+
+import android.database.Cursor;
 
 public abstract class Node {
 	public static final int SYNC_ACTION_NONE = 0;

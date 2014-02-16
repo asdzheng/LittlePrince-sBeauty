@@ -1,9 +1,5 @@
 package com.asd.littleprincesbeauty.activity;
 
-import com.asd.littleprincesbeauty.R;
-import com.asd.littleprincesbeauty.ui.GalleryAdapter;
-import com.asd.littleprincesbeauty.ui.ImageGallery;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -11,6 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.asd.littleprincesbeauty.R;
+import com.asd.littleprincesbeauty.ui.GalleryAdapter;
+import com.asd.littleprincesbeauty.ui.ImageGallery;
 
 public class ImageGalleryActivity extends Activity {
 	// 屏幕宽度

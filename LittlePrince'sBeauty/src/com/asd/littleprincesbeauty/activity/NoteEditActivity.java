@@ -5,17 +5,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.asd.littleprincesbeauty.R;
-import com.asd.littleprincesbeauty.data.tool.DataUtils;
-import com.asd.littleprincesbeauty.data.tool.Notes;
-import com.asd.littleprincesbeauty.data.tool.Notes.TextNote;
-import com.asd.littleprincesbeauty.model.WorkingNote;
-import com.asd.littleprincesbeauty.model.WorkingNote.NoteSettingChangedListener;
-import com.asd.littleprincesbeauty.tools.ResourceParser;
-import com.asd.littleprincesbeauty.tools.ResourceParser.TextAppearanceResources;
-import com.asd.littleprincesbeauty.ui.NoteEditText;
-import com.asd.littleprincesbeauty.ui.NoteEditText.OnTextViewChangeListener;
-
 import android.app.Activity;
 import android.app.SearchManager;
 import android.appwidget.AppWidgetManager;
@@ -39,12 +28,23 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.CompoundButton.OnCheckedChangeListener;
+
+import com.asd.littleprincesbeauty.R;
+import com.asd.littleprincesbeauty.data.tool.DataUtils;
+import com.asd.littleprincesbeauty.data.tool.Notes;
+import com.asd.littleprincesbeauty.data.tool.Notes.TextNote;
+import com.asd.littleprincesbeauty.model.WorkingNote;
+import com.asd.littleprincesbeauty.model.WorkingNote.NoteSettingChangedListener;
+import com.asd.littleprincesbeauty.tools.ResourceParser;
+import com.asd.littleprincesbeauty.tools.ResourceParser.TextAppearanceResources;
+import com.asd.littleprincesbeauty.ui.NoteEditText;
+import com.asd.littleprincesbeauty.ui.NoteEditText.OnTextViewChangeListener;
 
 public class NoteEditActivity extends Activity implements OnClickListener,
 		OnTextViewChangeListener, NoteSettingChangedListener {

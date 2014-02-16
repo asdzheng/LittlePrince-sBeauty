@@ -16,13 +16,13 @@
 
 package com.asd.littleprincesbeauty.data;
 
-import android.database.Cursor;
-import android.text.TextUtils;
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.database.Cursor;
+import android.text.TextUtils;
+import android.util.Log;
 
 import com.asd.littleprincesbeauty.data.tool.Notes;
 import com.asd.littleprincesbeauty.data.tool.Notes.DataColumns;

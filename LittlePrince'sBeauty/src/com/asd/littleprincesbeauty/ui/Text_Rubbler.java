@@ -1,19 +1,19 @@
 package com.asd.littleprincesbeauty.ui;
 
-import com.asd.littleprincesbeauty.activity.RubblerActivity;
-
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.Bitmap.Config;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.TextView;
+
+import com.asd.littleprincesbeauty.activity.RubblerActivity;
 
 public class Text_Rubbler extends TextView {
 	private float TOUCH_TOLERANCE; // 填充距离，使线条更自然，柔和,值越小，越柔和。

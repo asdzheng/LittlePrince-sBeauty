@@ -16,6 +16,13 @@
 
 package com.asd.littleprincesbeauty.model;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ContentUris;
+import android.content.Context;
+import android.database.Cursor;
+import android.text.TextUtils;
+import android.util.Log;
+
 import com.asd.littleprincesbeauty.data.tool.Notes;
 import com.asd.littleprincesbeauty.data.tool.Notes.CallNote;
 import com.asd.littleprincesbeauty.data.tool.Notes.DataColumns;
@@ -23,13 +30,6 @@ import com.asd.littleprincesbeauty.data.tool.Notes.DataConstants;
 import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
 import com.asd.littleprincesbeauty.data.tool.Notes.TextNote;
 import com.asd.littleprincesbeauty.tools.ResourceParser.NoteBgResources;
-
-import android.appwidget.AppWidgetManager;
-import android.content.ContentUris;
-import android.content.Context;
-import android.database.Cursor;
-import android.text.TextUtils;
-import android.util.Log;
 
 public class WorkingNote {
 	// Note for the working note

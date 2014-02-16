@@ -16,18 +16,18 @@
 
 package com.asd.littleprincesbeauty.data;
 
-import android.database.Cursor;
-import android.util.Log;
+import java.util.ArrayList;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.database.Cursor;
+import android.util.Log;
 
 import com.asd.littleprincesbeauty.data.tool.Notes;
 import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
 import com.asd.littleprincesbeauty.exception.ActionFailureException;
 import com.asd.littleprincesbeauty.tools.GTaskStringUtils;
-
-import java.util.ArrayList;
 
 public class TaskList extends Node {
 	private static final String TAG = TaskList.class.getSimpleName();

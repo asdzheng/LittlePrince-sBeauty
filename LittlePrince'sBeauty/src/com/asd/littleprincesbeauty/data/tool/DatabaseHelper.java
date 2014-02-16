@@ -16,15 +16,15 @@
 
 package com.asd.littleprincesbeauty.data.tool;
 
-import com.asd.littleprincesbeauty.data.tool.Notes.DataColumns;
-import com.asd.littleprincesbeauty.data.tool.Notes.DataConstants;
-import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import com.asd.littleprincesbeauty.data.tool.Notes.DataColumns;
+import com.asd.littleprincesbeauty.data.tool.Notes.DataConstants;
+import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String DB_NAME = "littleprince";

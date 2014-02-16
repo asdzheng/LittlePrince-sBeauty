@@ -16,14 +16,14 @@
 
 package com.asd.littleprincesbeauty.data.tool;
 
+import java.util.HashMap;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Data;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
-
-import java.util.HashMap;
 
 public class Contact {
 	private static HashMap<String, String> sContactCache;

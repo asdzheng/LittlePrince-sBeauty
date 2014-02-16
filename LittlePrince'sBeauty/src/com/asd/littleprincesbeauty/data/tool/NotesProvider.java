@@ -16,11 +16,6 @@
 
 package com.asd.littleprincesbeauty.data.tool;
 
-import com.asd.littleprincesbeauty.R;
-import com.asd.littleprincesbeauty.data.tool.Notes.DataColumns;
-import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
-import com.asd.littleprincesbeauty.data.tool.DatabaseHelper.TABLE;
-
 import android.app.SearchManager;
 import android.content.ContentProvider;
 import android.content.ContentUris;
@@ -32,6 +27,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.asd.littleprincesbeauty.R;
+import com.asd.littleprincesbeauty.data.tool.DatabaseHelper.TABLE;
+import com.asd.littleprincesbeauty.data.tool.Notes.DataColumns;
+import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
 
 public class NotesProvider extends ContentProvider {
 	private static final UriMatcher mMatcher;

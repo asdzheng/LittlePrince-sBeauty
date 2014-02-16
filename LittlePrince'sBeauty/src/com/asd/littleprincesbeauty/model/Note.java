@@ -16,6 +16,8 @@
 
 package com.asd.littleprincesbeauty.model;
 
+import java.util.ArrayList;
+
 import android.content.ContentProviderOperation;
 import android.content.ContentProviderResult;
 import android.content.ContentUris;
@@ -25,8 +27,6 @@ import android.content.OperationApplicationException;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.util.Log;
-
-import java.util.ArrayList;
 
 import com.asd.littleprincesbeauty.data.tool.Notes;
 import com.asd.littleprincesbeauty.data.tool.Notes.CallNote;

@@ -16,6 +16,9 @@
 
 package com.asd.littleprincesbeauty.data.tool;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+
 import android.content.ContentProviderOperation;
 import android.content.ContentProviderResult;
 import android.content.ContentResolver;
@@ -25,9 +28,6 @@ import android.content.OperationApplicationException;
 import android.database.Cursor;
 import android.os.RemoteException;
 import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.HashSet;
 
 import com.asd.littleprincesbeauty.data.tool.Notes.CallNote;
 import com.asd.littleprincesbeauty.data.tool.Notes.DataColumns;

@@ -5,9 +5,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.asd.littleprincesbeauty.R;
-import com.asd.littleprincesbeauty.tools.LrcHandle;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -15,6 +12,9 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
+
+import com.asd.littleprincesbeauty.R;
+import com.asd.littleprincesbeauty.tools.LrcHandle;
 
 public class WordView extends TextView {
 	private List<String> mWordsList = new ArrayList<String>();

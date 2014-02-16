@@ -1,7 +1,5 @@
 package com.asd.littleprincesbeauty.activity;
 
-import com.asd.littleprincesbeauty.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.asd.littleprincesbeauty.R;
 
 public class SplashActivity extends Activity {
 

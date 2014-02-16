@@ -16,6 +16,12 @@
 
 package com.asd.littleprincesbeauty.data;
 
+import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.appwidget.AppWidgetManager;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -24,18 +30,12 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import com.asd.littleprincesbeauty.data.tool.Notes;
 import com.asd.littleprincesbeauty.data.tool.Notes.DataColumns;
 import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
 import com.asd.littleprincesbeauty.exception.ActionFailureException;
 import com.asd.littleprincesbeauty.tools.GTaskStringUtils;
 import com.asd.littleprincesbeauty.tools.ResourceParser;
-
-import java.util.ArrayList;
 
 public class SqlNote {
 	private static final String TAG = SqlNote.class.getSimpleName();

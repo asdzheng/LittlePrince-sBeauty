@@ -16,11 +16,6 @@
 
 package com.asd.littleprincesbeauty.ui;
 
-import com.asd.littleprincesbeauty.R;
-import com.asd.littleprincesbeauty.data.tool.DataUtils;
-import com.asd.littleprincesbeauty.data.tool.Notes;
-import com.asd.littleprincesbeauty.tools.ResourceParser.NoteItemBgResources;
-
 import android.content.Context;
 import android.text.format.DateUtils;
 import android.view.View;
@@ -28,6 +23,11 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.asd.littleprincesbeauty.R;
+import com.asd.littleprincesbeauty.data.tool.DataUtils;
+import com.asd.littleprincesbeauty.data.tool.Notes;
+import com.asd.littleprincesbeauty.tools.ResourceParser.NoteItemBgResources;
 
 public class NotesListItem extends LinearLayout {
 	private ImageView mAlert;

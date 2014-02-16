@@ -1,17 +1,17 @@
 package com.asd.littleprincesbeauty.ui;
 
-import com.asd.littleprincesbeauty.activity.ImageGalleryActivity;
-
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.GestureDetector.SimpleOnGestureListener;
 import android.widget.Gallery;
+
+import com.asd.littleprincesbeauty.activity.ImageGalleryActivity;
 
 public class ImageGallery extends Gallery {
 	private static final String TAG = "ImageGallery";

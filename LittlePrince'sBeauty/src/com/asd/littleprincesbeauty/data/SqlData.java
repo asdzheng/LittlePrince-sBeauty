@@ -16,6 +16,9 @@
 
 package com.asd.littleprincesbeauty.data;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -24,14 +27,11 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import com.asd.littleprincesbeauty.data.tool.DatabaseHelper.TABLE;
 import com.asd.littleprincesbeauty.data.tool.Notes;
 import com.asd.littleprincesbeauty.data.tool.Notes.DataColumns;
 import com.asd.littleprincesbeauty.data.tool.Notes.DataConstants;
 import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
-import com.asd.littleprincesbeauty.data.tool.DatabaseHelper.TABLE;
 import com.asd.littleprincesbeauty.exception.ActionFailureException;
 
 public class SqlData {

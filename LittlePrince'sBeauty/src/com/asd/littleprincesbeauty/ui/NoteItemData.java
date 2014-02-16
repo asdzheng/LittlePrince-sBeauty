@@ -18,15 +18,15 @@ package com.asd.littleprincesbeauty.ui;
 
 import java.util.HashSet;
 
+import android.content.Context;
+import android.database.Cursor;
+import android.text.TextUtils;
+
 import com.asd.littleprincesbeauty.activity.NoteEditActivity;
 import com.asd.littleprincesbeauty.data.tool.Contact;
 import com.asd.littleprincesbeauty.data.tool.DataUtils;
 import com.asd.littleprincesbeauty.data.tool.Notes;
 import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
-
-import android.content.Context;
-import android.database.Cursor;
-import android.text.TextUtils;
 
 public class NoteItemData {
 	public static final String[] PROJECTION = new String[] { NoteColumns.ID,

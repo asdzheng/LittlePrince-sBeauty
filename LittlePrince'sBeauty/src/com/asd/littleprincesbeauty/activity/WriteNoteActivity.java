@@ -2,17 +2,8 @@ package com.asd.littleprincesbeauty.activity;
 
 import java.util.ArrayList;
 
-import com.asd.littleprincesbeauty.R;
-import com.asd.littleprincesbeauty.data.tool.DataUtils;
-import com.asd.littleprincesbeauty.data.tool.Notes;
-import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
-import com.asd.littleprincesbeauty.ui.NoteItemData;
-import com.asd.littleprincesbeauty.ui.NotesListAdapter;
-import com.asd.littleprincesbeauty.ui.NotesListItem;
-
 import android.app.Activity;
 import android.app.AlertDialog;
-
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -25,11 +16,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
+
+import com.asd.littleprincesbeauty.R;
+import com.asd.littleprincesbeauty.data.tool.DataUtils;
+import com.asd.littleprincesbeauty.data.tool.Notes;
+import com.asd.littleprincesbeauty.data.tool.Notes.NoteColumns;
+import com.asd.littleprincesbeauty.ui.NoteItemData;
+import com.asd.littleprincesbeauty.ui.NotesListAdapter;
+import com.asd.littleprincesbeauty.ui.NotesListItem;
 
 public class WriteNoteActivity extends Activity implements OnClickListener,
 		OnItemLongClickListener {

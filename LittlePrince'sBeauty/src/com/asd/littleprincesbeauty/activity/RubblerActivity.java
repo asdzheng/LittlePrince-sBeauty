@@ -3,15 +3,15 @@ package com.asd.littleprincesbeauty.activity;
 import java.util.Calendar;
 import java.util.Random;
 
-import com.asd.littleprincesbeauty.R;
-import com.asd.littleprincesbeauty.ui.Text_Rubbler;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.asd.littleprincesbeauty.R;
+import com.asd.littleprincesbeauty.ui.Text_Rubbler;
 
 public class RubblerActivity extends Activity {
 
@@ -29,7 +29,7 @@ public class RubblerActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.prize_show);
+		setContentView(R.layout.prize);
 		// 设置的颜色必须要有透明度。
 		text_Rubbler = (Text_Rubbler) findViewById(R.id.rubbler);
 
