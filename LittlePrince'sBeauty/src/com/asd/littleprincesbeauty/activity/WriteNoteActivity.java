@@ -31,7 +31,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class WriteNote extends Activity implements OnClickListener,
+public class WriteNoteActivity extends Activity implements OnClickListener,
 		OnItemLongClickListener {
 	private Button mAddNewNote;
 

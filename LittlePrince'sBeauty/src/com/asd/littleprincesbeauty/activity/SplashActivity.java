@@ -75,7 +75,7 @@ public class SplashActivity extends Activity {
 	}
 
 	private void showHeadImage() {
-		head.setImageResource(R.drawable.head);
+		head.setImageResource(R.drawable.head_moon);
 		AlphaAnimation alphaAnimation1 = new AlphaAnimation(0.0f, 0.6f);
 		alphaAnimation1.setDuration(HEAD_SHOW_TIME);
 		alphaAnimation1.setStartOffset(HEAD_DURATION_TIME);

@@ -185,7 +185,7 @@ public class NoteEditActivity extends Activity implements OnClickListener,
 
 			if (!DataUtils.visibleInNoteDatabase(getContentResolver(), noteId,
 					Notes.TYPE_NOTE)) {
-				Intent jump = new Intent(this, WriteNote.class);
+				Intent jump = new Intent(this, WriteNoteActivity.class);
 				startActivity(jump);
 				showToast(R.string.error_note_not_exist);
 				finish();

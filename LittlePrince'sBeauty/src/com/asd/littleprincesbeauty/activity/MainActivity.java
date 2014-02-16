@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void write() {
-		Intent intent = new Intent(this, WriteNote.class);
+		Intent intent = new Intent(this, WriteNoteActivity.class);
 		startActivity(intent);
 		finish();
 
