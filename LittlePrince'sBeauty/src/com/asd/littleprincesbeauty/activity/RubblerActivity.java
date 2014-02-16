@@ -17,8 +17,8 @@ public class RubblerActivity extends Activity {
 
 	private Random random;
 
-	private String[] prizeStrs = { "嘉嘉，亲我一下", "嘉嘉,抱我一下", "嘉嘉，不许生气",
-			"嘉嘉,带我吃好吃的", "嘉嘉，唱歌首歌给我听", "嘉嘉，今晚，hiahiahia~~~" };
+	private String[] prizeStrs = { "嘉嘉，亲我一下", "嘉嘉，抱我一下", "嘉嘉，不许生气",
+			"嘉嘉，带我吃好吃的", "嘉嘉，唱歌首歌给我听", "嘉嘉，今晚，hiahiahia~~~" };
 	
 	private String rubblerStr;
 	private Text_Rubbler text_Rubbler;

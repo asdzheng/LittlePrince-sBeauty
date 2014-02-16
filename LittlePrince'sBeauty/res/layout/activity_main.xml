@@ -9,35 +9,40 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/music"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="198dp"
-        android:layout_marginTop="140dp"
-        android:clickable="true"
-        android:text="音乐"
-        android:textColor="@android:color/white"
-        android:textSize="15sp" />
-
-    <Button
-        android:id="@+id/write"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="一些话" />
-
-    <Button
-        android:id="@+id/prize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="抽奖" />
-
-    <Button
+    <ImageView
         android:id="@+id/paint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/write"
-        android:layout_below="@+id/write"
-        android:text="aa" />
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="122dp"
+        android:clickable="true"
+        android:src="@drawable/picture" />
+
+    <ImageView
+        android:id="@+id/prize"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="55dp"
+        android:clickable="true"
+        android:src="@drawable/money" />
+
+    <ImageView
+        android:id="@+id/write"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="42dp"
+        android:clickable="true"
+        android:src="@drawable/pencil" />
+
+    <ImageView
+        android:id="@+id/music"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="97dp"
+        android:clickable="true"
+        android:src="@drawable/music" />
 
 </RelativeLayout>

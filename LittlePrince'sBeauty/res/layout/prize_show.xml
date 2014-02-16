@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/widget_4x_red"
+    android:background="@drawable/prize_background"
     android:orientation="vertical" >
 
     <!--
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/prize_to2"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="45dp"
             android:text="@string/title"
             android:textAppearance="@style/TextAppearanceMedium" />
 
@@ -37,7 +37,6 @@
             android:layout_below="@+id/prize_to1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="18dp"
-            android:padding="20dp"
             android:text="@string/prize_note"
             android:textAppearance="@style/TextAppearanceNormal" />
     </RelativeLayout>
@@ -55,16 +54,16 @@
     <RelativeLayout
         android:id="@+id/prize_content"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="200dp"
         android:layout_below="@+id/rubbler"
-        android:orientation="vertical"
-        android:paddingTop="10dp" >
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/prize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="20dp"
             android:text="@string/today_prize"
             android:textAppearance="@style/TextAppearanceNormal" />
 
@@ -73,7 +72,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/prize"
-            android:paddingLeft="80dp"
+            android:paddingLeft="50dp"
+            android:layout_marginTop="20dp"
             android:paddingTop="10dp"
             android:text=""
             android:textAppearance="@style/TextAppearanceNormal" />
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/prize_01"
-            android:paddingLeft="80dp"
+            android:paddingLeft="50dp"
             android:paddingTop="10dp"
             android:text=""
             android:textAppearance="@style/TextAppearanceNormal" />
@@ -93,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/prize_02"
-            android:paddingLeft="80dp"
+            android:paddingLeft="50dp"
             android:paddingTop="10dp"
             android:text=""
             android:textAppearance="@style/TextAppearanceNormal" />

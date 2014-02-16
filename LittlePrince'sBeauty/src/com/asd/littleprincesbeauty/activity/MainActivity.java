@@ -9,28 +9,27 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-	private Button btn_write;
-	private Button btn_prize;
-	private Button btn_paint;
-	private TextView music;
+	private ImageView write;
+	private ImageView prize;
+	private ImageView paint;
+	private ImageView music;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		// imageButton = (ImageButton) findViewById(R.id.music);
+		music = (ImageView) findViewById(R.id.music);
+		write = (ImageView) findViewById(R.id.write);
+		prize = (ImageView) findViewById(R.id.prize);
+		paint = (ImageView) findViewById(R.id.paint);
 
-		music = (TextView) findViewById(R.id.music);
-		btn_write = (Button) findViewById(R.id.write);
-		btn_prize = (Button) findViewById(R.id.prize);
-		btn_paint = (Button) findViewById(R.id.paint);
-
-		btn_write.setOnClickListener(new OnClickListener() {
+		write.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -46,7 +45,7 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		btn_prize.setOnClickListener(new OnClickListener() {
+		prize.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -54,7 +53,7 @@ public class MainActivity extends Activity {
 			}
 		});
 		
-		btn_paint.setOnClickListener(new OnClickListener() {
+		paint.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {

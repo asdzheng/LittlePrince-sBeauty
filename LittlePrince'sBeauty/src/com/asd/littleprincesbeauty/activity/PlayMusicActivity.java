@@ -28,7 +28,7 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 	private MediaPlayer mp;// MediaPlayer对象
 	private ImageButton playbtn = null;// 播放按钮
 
-	//private TextView music_name = null;
+	// private TextView music_name = null;
 	private static final String MUSIC_CURRENT = "com.music.currentTime";
 	private static final String MUSIC_DURATION = "com.music.duration";
 	private static final String MUSIC_NEXT = "com.music.duration";
@@ -53,9 +53,9 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.paly_music);
 
-		//music_name = (TextView) findViewById(R.id.muisc_name);
+		// music_name = (TextView) findViewById(R.id.muisc_name);
 		mWordView = (WordView) findViewById(R.id.lrc);// 歌词
-		//music_name.setText("星星堆满天");
+		// music_name.setText("星星堆满天");
 
 		thread = new WordViewInvalidateThread();
 		ShowPlayBtn();// 显示或者说监视播放按钮事件
@@ -68,12 +68,13 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 		handler = new Handler() {
 			@Override
 			public void handleMessage(Message msg) {
-				handler.sendEmptyMessageDelayed(1, 600);// 发送空消息持续时间
+				handler.sendEmptyMessageDelayed(1, 100);// 发送空消息持续时间
 			}
 		};
 		lrcHandle = new LrcHandle();
 		lrcHandle.readLRC(is);
 		mTimeList = lrcHandle.getTime();
+		System.out.println("TimeList =============== " + mTimeList);
 	}
 
 	private void initMediaPlayer() {
@@ -82,9 +83,9 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 			mp.release();
 		}
 		mp = new MediaPlayer();// 实例化MediaPlayer对象
-		mp = MediaPlayer.create(this, R.raw.haishanggirl);
+		mp = MediaPlayer.create(this, R.raw.haishangirl);
 		mp.setOnCompletionListener(this);// 设置下一首的监听
-		is = getResources().openRawResource(R.raw.haishanggirl);
+		is = getResources().openRawResource(R.raw.haishan);
 	}
 
 	// 显示各个按钮并做监视
@@ -182,7 +183,7 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 				};
 
 				isWait = true;
-				System.out.println("卡住了妈？");
+				System.out.println("卡住了吗？");
 			}
 
 		}
@@ -193,6 +194,7 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 	private void stop() {
 		if (mp != null) {
 			mp.stop();
+			mp = null;
 		}
 
 		if (handler != null) {
@@ -220,33 +222,51 @@ public class PlayMusicActivity extends Activity implements OnCompletionListener 
 
 		@Override
 		public void run() {
-			while (mp.isPlaying()) {
-				final int current = mp.getCurrentPosition();
+			if (mp != null) {
 
-				for (int i = 0; i < mTimeList.size(); i++) {
-					if (current > mTimeList.get(i)
-							&& current < mTimeList.get(i + 1)) {
-						try {
-							Thread.sleep(mTimeList.get(i + 1)
-									- mTimeList.get(i));
-						} catch (InterruptedException e) {
-							e.printStackTrace();
+				while (mp.isPlaying()) {
+					final int current = mp.getCurrentPosition();
+
+					for (int i = 0; i < mTimeList.size() - 1; i++) {
+
+						System.out.println("time size" + mTimeList.size());
+						System.out.println("current == " + current
+								+ " || i == " + mTimeList.get(i)
+								+ " || i+1 == " + mTimeList.get(i + 1));
+
+						if (current >= mTimeList.get(i)
+								&& current < mTimeList.get(i + 1)) {
+							try {
+								Thread.sleep(mTimeList.get(i + 1)
+										- mTimeList.get(i));
+
+								System.out.println(mTimeList.get(i + 1)
+										- mTimeList.get(i));
+
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
 						}
+					}
+					if (handler != null) {
+						handler.post(new Runnable() {
+							@Override
+							public void run() {
+								if (current < mTimeList.get(mTimeList.size() - 1)) {
+									System.out.println("current ============ "
+											+ current
+											+ " || time ============= "
+											+ mTimeList.get(mTimeList.size() - 1));
+									mWordView.invalidate();
+								}
+							}
+						});
 					}
 				}
 
-			/*	handler.post(new Runnable() {
-					@Override
-					public void run() {
-						if (current < mTimeList.get(mTimeList.size() - 1)) {
-							mWordView.invalidate();
-						}
-					}
-				});*/
-
 			}
-		}
 
+		}
 	}
 
 	@Override

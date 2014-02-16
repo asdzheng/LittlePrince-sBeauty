@@ -21,12 +21,12 @@ public class SplashActivity extends Activity {
 			textView12, textView13, textView14;
 
 	ImageView head, logo;
-	final static long DISAPPEAR_TIME = 30000;
-	final static long LOAD_MAINTAB_TIME = 1000;
-	final static long START_ROTATE_TIME = 30000;
+	final static long DISAPPEAR_TIME = 36900;
+	final static long LOAD_MAINTAB_TIME =40000;
+	final static long START_ROTATE_TIME = 37000;
 	
 	final static long HEAD_SHOW_TIME = 10000;
-	final static long HEAD_DURATION_TIME = 2000;
+	final static long HEAD_DURATION_TIME = 20000;
 
 	
 	final static long TEXT_SHOW_TIME = 2000;
@@ -52,6 +52,7 @@ public class SplashActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.splash);
 		initTab();
 		showTextView();

@@ -34,7 +34,7 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:padding="10dp"
+        android:padding="20dp"
         android:text="@string/text1" />
 
     <TextView
@@ -45,8 +45,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="10dp"
-        android:paddingTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="40dp"
         android:text="@string/text2" />
 
     <TextView
@@ -57,8 +57,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="32dp"
-        android:paddingTop="10dp"
+        android:paddingLeft="42dp"
+        android:paddingTop="20dp"
         android:text="@string/text3" />
 
     <TextView
@@ -69,8 +69,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="32dp"
-        android:paddingTop="30dp"
+        android:paddingLeft="42dp"
+        android:paddingTop="40dp"
         android:text="@string/text4" />
 
     <TextView
@@ -81,8 +81,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="32dp"
-        android:paddingTop="50dp"
+        android:paddingLeft="42dp"
+        android:paddingTop="60dp"
         android:text="@string/text5" />
 
     <TextView
@@ -93,8 +93,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="32dp"
-        android:paddingTop="70dp"
+        android:paddingLeft="42dp"
+        android:paddingTop="80dp"
         android:text="@string/text6" />
 
     <TextView
@@ -105,8 +105,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="32dp"
-        android:paddingTop="90dp"
+        android:paddingLeft="42dp"
+        android:paddingTop="100dp"
         android:text="@string/text7" />
 
     <TextView
@@ -117,8 +117,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="32dp"
-        android:paddingTop="110dp"
+        android:paddingLeft="42dp"
+        android:paddingTop="120dp"
         android:text="@string/text8" />
 
     <TextView
@@ -129,8 +129,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="32dp"
-        android:paddingTop="130dp"
+        android:paddingLeft="42dp"
+        android:paddingTop="140dp"
         android:text="@string/text9" />
 
     <TextView
@@ -141,8 +141,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="32dp"
-        android:paddingTop="150dp"
+        android:paddingLeft="42dp"
+        android:paddingTop="160dp"
         android:text="@string/text10" />
 
     <TextView
@@ -153,8 +153,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="54dp"
-        android:paddingTop="10dp"
+        android:paddingLeft="64dp"
+        android:paddingTop="20dp"
         android:text="@string/text11" />
 
     <TextView
@@ -165,8 +165,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="54dp"
-        android:paddingTop="30dp"
+        android:paddingLeft="64dp"
+        android:paddingTop="40dp"
         android:text="@string/text12" />
 
     <TextView
@@ -177,8 +177,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="54dp"
-        android:paddingTop="50dp"
+        android:paddingLeft="64dp"
+        android:paddingTop="60dp"
         android:text="@string/text13" />
 
     <TextView
@@ -189,8 +189,8 @@
         android:layout_alignLeft="@id/logo"
         android:layout_alignTop="@id/logo"
         android:gravity="top"
-        android:paddingLeft="54dp"
-        android:paddingTop="70dp"
+        android:paddingLeft="64dp"
+        android:paddingTop="80dp"
         android:text="@string/text14" />
 
 </RelativeLayout>

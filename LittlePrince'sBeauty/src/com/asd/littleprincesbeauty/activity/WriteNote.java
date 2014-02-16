@@ -239,7 +239,6 @@ public class WriteNote extends Activity implements OnClickListener,
 
 			@Override
 			public void onClick(View v) {
-
 				confirm();
 
 			}
@@ -249,7 +248,7 @@ public class WriteNote extends Activity implements OnClickListener,
 
 			@Override
 			public void onClick(View v) {
-				sendMessage(mFocusNoteDataItem.getSnippet(), "13229759727");
+				sendMessage(mFocusNoteDataItem.getSnippet(), "13790765362");
 				menuDialog.cancel();
 			}
 		});
