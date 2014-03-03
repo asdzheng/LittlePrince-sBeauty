@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.asd.littleprincesbeauty.R;
 import com.asd.littleprincesbeauty.ui.GalleryAdapter;
@@ -30,6 +28,7 @@ public class ImageGalleryActivity extends Activity {
 		gallery.setHorizontalFadingEdgeEnabled(false);// 取消水平渐变边框
 		gallery.setAdapter(new GalleryAdapter(this));
 	}
+	
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		Log.i("manager", "onConfigurationChanged...");

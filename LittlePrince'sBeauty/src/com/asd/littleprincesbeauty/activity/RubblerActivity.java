@@ -19,7 +19,7 @@ public class RubblerActivity extends Activity {
 
 	private String[] prizeStrs = { "嘉嘉，亲我一下", "嘉嘉，抱我一下", "嘉嘉，不许生气",
 			"嘉嘉，带我吃好吃的", "嘉嘉，唱歌首歌给我听", "嘉嘉，今晚，hiahiahia~~~" };
-	
+
 	private String rubblerStr;
 	private Text_Rubbler text_Rubbler;
 	private int num = 0;
@@ -102,15 +102,17 @@ public class RubblerActivity extends Activity {
 				prizeTx1.setText(prize1);
 				prizeTx2.setText(prize2);
 				prizeTx3.setText(prize3);
+				
 			} else if (num == 2) {
 				String prize1 = preferences.getString("prize1", "");
 				String prize2 = preferences.getString("prize2", "");
 
 				prizeTx1.setText(prize1);
 				prizeTx2.setText(prize2);
+				
 			} else if (num == 1) {
+				
 				String prize1 = preferences.getString("prize1", "");
-
 				prizeTx1.setText(prize1);
 			}
 

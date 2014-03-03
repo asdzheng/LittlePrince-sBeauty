@@ -224,8 +224,6 @@ public class WriteNoteActivity extends Activity implements OnClickListener,
 
 	public void initMenuDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		System.out.println("getSelectedItemIds() =================  "
-				+ mNotesListAdapter.getSelectedItemIds());
 
 		builder.setNegativeButton("取消", null);
 

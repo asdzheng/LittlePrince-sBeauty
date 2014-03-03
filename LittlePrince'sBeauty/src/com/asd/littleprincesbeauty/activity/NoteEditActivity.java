@@ -48,6 +48,7 @@ import com.asd.littleprincesbeauty.ui.NoteEditText.OnTextViewChangeListener;
 
 public class NoteEditActivity extends Activity implements OnClickListener,
 		OnTextViewChangeListener, NoteSettingChangedListener {
+	
 	private class HeadViewHolder {
 		public TextView tvModified;
 

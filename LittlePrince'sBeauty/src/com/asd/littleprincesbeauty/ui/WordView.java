@@ -87,6 +87,7 @@ public class WordView extends TextView {
 		mY = h;
 		mMiddleY = h * 0.3f;
 	}
+	
 
 	private void init() throws IOException {
 		setFocusable(true);

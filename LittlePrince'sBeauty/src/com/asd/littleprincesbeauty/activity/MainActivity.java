@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.asd.littleprincesbeauty.R;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener {
 
 	private ImageView write;
 	private ImageView prize;
@@ -27,37 +27,10 @@ public class MainActivity extends Activity {
 		prize = (ImageView) findViewById(R.id.prize);
 		paint = (ImageView) findViewById(R.id.paint);
 
-		write.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				write();
-			}
-		});
-
-		music.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				playMusic();
-			}
-		});
-
-		prize.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				prize();
-			}
-		});
-		
-		paint.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				showPaint();
-			}
-		});
+		music.setOnClickListener(this);
+		write.setOnClickListener(this);
+		prize.setOnClickListener(this);
+		paint.setOnClickListener(this);
 
 	}
 
@@ -66,13 +39,6 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 		finish();
 
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
 	}
 
 	// 播放音乐方法
@@ -87,10 +53,32 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 		finish();
 	}
-	
+
 	public void showPaint() {
 		Intent intent = new Intent(this, ImageGalleryActivity.class);
 		startActivity(intent);
 		finish();
+	}
+
+	@Override
+	public void onClick(View v) {
+		int id = v.getId();
+		switch (id) {
+		case R.id.write:
+			write();
+			break;
+		case R.id.music:
+			playMusic();
+			break;
+		case R.id.prize:
+			prize();
+			break;
+		case R.id.paint:
+			showPaint();
+			break;
+		default:
+			break;
+		}
+
 	}
 }

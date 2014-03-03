@@ -22,7 +22,7 @@ public class SplashActivity extends Activity {
 
 	ImageView head, logo;
 	final static long DISAPPEAR_TIME = 36900;
-	final static long LOAD_MAINTAB_TIME =40000;
+	final static long LOAD_MAINTAB_TIME =1000;
 	final static long START_ROTATE_TIME = 37000;
 	
 	final static long HEAD_SHOW_TIME = 10000;

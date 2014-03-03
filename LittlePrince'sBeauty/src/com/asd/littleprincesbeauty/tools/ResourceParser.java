@@ -115,14 +115,14 @@ public class ResourceParser {
 			return BG_2X_RESOURCES[id];
 		}
 
-		private final static int[] BG_4X_RESOURCES = new int[] {
-				R.drawable.widget_4x_yellow, R.drawable.widget_4x_blue,
-				R.drawable.widget_4x_white, R.drawable.widget_4x_green,
-				R.drawable.widget_4x_red };
-
-		public static int getWidget4xBgResource(int id) {
-			return BG_4X_RESOURCES[id];
-		}
+//		private final static int[] BG_4X_RESOURCES = new int[] {
+//				R.drawable.widget_4x_yellow, R.drawable.widget_4x_blue,
+//				R.drawable.widget_4x_white, R.drawable.widget_4x_green,
+//				R.drawable.widget_4x_red };
+//
+//		public static int getWidget4xBgResource(int id) {
+//			return BG_4X_RESOURCES[id];
+//		}
 	}
 
 	public static class TextAppearanceResources {
